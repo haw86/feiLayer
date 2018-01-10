@@ -1,0 +1,421 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>feiLayer弹层组件移动版</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/dom.css" />
+        <link rel="stylesheet" type="text/css" href="js/feiLayer/default.css" />
+        <script src="js/feiLayer/feiLayer.js" type="text/javascript"></script>
+        
+        <script src="js/jquery.js" type="text/javascript"></script>
+        <script src="js/dom.js" type="text/javascript"></script>
+    </head>
+    <body class="body-api">
+        <div class="site-name">feiLayer</div>
+        <nav class="nav">
+            <a href="https://github.com/haw86/feiLayer" target="_blank">下载</a>
+            <a href="api.html" class="current">文档</a>
+            <a href="index.html">首页</a>
+        </nav>
+        <main class="api-area">
+            <sidebar>
+                <div class="list">
+                    <h2 class="p-title">入门</h2>
+                    <div class="sub-box">
+                        <a href="javascript:void(0);" class="link" to="link_des">
+                            <span class="name">介绍</span>
+                            <span class="des"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="link" to="link_down">
+                            <span class="name">下载</span>
+                            <span class="des"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="link" to="link_ss">
+                            <span class="name">快速上手</span>
+                            <span class="des"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="list">
+                    <h2 class="p-title">基础参数</h2>
+                    <div class="sub-box">
+                        <a href="javascript:void(0);" class="link current" to="link_type">
+                            <span class="name">type</span>
+                            <span class="des">层类型</span>
+                        </a>
+                        <a href="javascript:void(0);" class="link" to="link_title">
+                            <span class="name">title</span>
+                            <span class="des">标题</span>
+                        </a>
+                        <a href="javascript:void(0);" class="link" to="link_content">
+                            <span class="name">content</span>
+                            <span class="des">内容</span>
+                        </a>
+                        <a href="javascript:void(0);" class="link" to="link_shade">
+                            <span class="name">shade</span>
+                            <span class="des">是否显示遮罩</span>
+                        </a>
+                        <a href="javascript:void(0);" class="link" to="link_shadeClose">
+                            <span class="name">shadeClose</span>
+                            <span class="des">是否遮罩关闭层</span>
+                        </a>
+                        <a href="javascript:void(0);" class="link" to="link_skin">
+                            <span class="name">skin</span>
+                            <span class="des">自定义风格</span>
+                        </a>
+                        <a href="javascript:void(0);" class="link" to="link_btn">
+                            <span class="name">btn</span>
+                            <span class="des">按钮</span>
+                        </a>
+                        <a href="javascript:void(0);" class="link" to="link_time">
+                            <span class="name">time</span>
+                            <span class="des">自动关闭的时间</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="list">
+                    <h2 class="p-title">回调方法</h2>
+                    <div class="sub-box">
+                        <a href="javascript:void(0);" class="link" to="link_success">
+                            <span class="name">success</span>
+                            <span class="des">弹出成功后触发</span>
+                        </a>
+                        <a href="javascript:void(0);" class="link" to="link_yes">
+                            <span class="name">yes</span>
+                            <span class="des">确定</span>
+                        </a>
+                        <a href="javascript:void(0);" class="link" to="link_no">
+                            <span class="name">no</span>
+                            <span class="des">取消</span>
+                        </a>
+                        <a href="javascript:void(0);" class="link" to="link_end">
+                            <span class="name">end</span>
+                            <span class="des">关闭后触发</span>
+                        </a>
+                    </div>
+                </div>
+            </sidebar>
+            <section class="content">
+                
+                <div class="auto-box clearfix">    
+                    
+                    <div class="list" in="link_des">
+                        <h2 class="title">介绍</h2>
+                        <div class="api-con clearfix">
+                            feiLayer mobile是为移动设备（手机、平板等webkit内核浏览器/webview）量身定做的弹层UI。不支持IE之类的浏览器内核。另外，该组件采用原生JavaScript编写，无需依赖任何第三方库。
+                        </div>
+                    </div>
+                    
+                    <div class="list" in="link_down">
+                        <h2 class="title">下载</h2>
+                        <div class="api-con clearfix">
+                            版本：1.0<br>
+                            <a href="feiLayer1.0.zip" class="ui-btn">点击下载</a>
+                        </div>
+                    </div>
+                    
+                    <div class="list" in="link_ss">
+                        <h2 class="title">快速上手</h2>
+                        <div class="api-con clearfix">
+                            <p>
+                                1.下载好文件后，部署到您的项目里面，然后引入下面两个文件就可以了：
+                            </p>
+                            <pre>
+./feiLayer/default.css
+./feiLayer/feiLayer.min.js
+两个引入时，注意文件的路径不要弄错了！
+</pre>
+                            
+                            
+                            <p>
+                                2.调用如下代码，就可以直接使用了，非常简单！您可以通过提供的Api调整到需要的功能：
+                            </p>
+                            <pre>
+feiLayer.open({
+    content:"晚上好，春天小姐！"
+});
+<a class="ui-btn" onclick="test1()">试一下</a>
+</pre>
+                        </div>
+                    </div>
+                    
+                    <div class="list" in="link_type">
+                        <h2 class="title">type<span class="des">层类型</span></h2>
+                        <div class="api-con clearfix">
+                            <p>
+                                类型：Number，默认：1 <br />
+                                提供3中层类型，1（信息框）、2（提示框）3（页面层）<br />
+                                如下：
+                            </p>
+                            <pre>
+feiLayer.open({
+    type:2,
+    content:"来自“春天小姐”的第一个提示框"
+});
+<a class="ui-btn" onclick="test3()">试一下</a>
+</pre>
+                        </div>
+                    </div>
+                    
+                    <div class="list" in="link_title">
+                        <h2 class="title">title<span class="des">标题</span></h2>
+                        <div class="api-con clearfix">
+                            <p>
+                                类型：String，默认：不显示 <br />
+                                如需要显示传值即可<br />
+                                默认无标题：
+                            </p>
+<pre>
+feiLayer.open({
+    content:"无标题！",
+    btn:["朕知道了"]
+});
+<a class="ui-btn" onclick="dom_titleFn2()">试一下</a>
+</pre>
+                            <p>
+                                自定义标题：
+                            </p>
+<pre>
+feiLayer.open({
+    title:"温馨提示",
+    content:"人家是标题，好吧",
+    btn:["朕知道了"]
+});
+<a class="ui-btn" onclick="dom_titleFn()">试一下</a>
+</pre>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="list" in="link_content">
+                        <h2 class="title">content<span class="des">内容</span></h2>
+                        <div class="api-con clearfix">
+                            <p>
+                                类型：String，默认："" <br />
+                                如需要显示传值即可:<br />
+                            </p>
+<pre>
+feiLayer.open({
+    content:"我是被带进来的内容！",
+    btn:["朕知道了"]
+});
+<a class="ui-btn" onclick="dom_contentFn()">试一下</a>
+</pre>
+                        </div>
+                    </div>
+                    
+                    <div class="list" in="link_shade">
+                        <h2 class="title">shade<span class="des">是否显示遮罩</span></h2>
+                        <div class="api-con clearfix">
+                            <p>
+                                类型：Bool，默认：true <br />
+                                如果不需要遮罩，设置 false 即可:<br />
+                            </p>
+<pre>
+feiLayer.open({
+    shade:false,
+    content:"无遮罩！",
+    btn:["朕知道了"]
+});
+<a class="ui-btn" onclick="dom_shadeFn()">试一下</a>
+</pre>
+                        </div>
+                    </div>
+                    
+                    <div class="list" in="link_shadeClose">
+                        <h2 class="title">shadeClose<span class="des">是否使用遮罩触发关闭层</span></h2>
+                        <div class="api-con clearfix">
+                            <p>
+                                类型：Bool，默认：true <br />
+                                如果不需要该功能，设置 false 即可:<br />
+                            </p>
+<pre>
+feiLayer.open({
+    shadeClose:false,
+    content:"遮罩不能关闭！",
+    btn:["朕知道了"]
+});
+<a class="ui-btn" onclick="dom_shadeCloseFn()">试一下</a>
+</pre>
+                        </div>
+                    </div>
+                    
+                    <div class="list" in="link_skin">
+                        <h2 class="title">skin<span class="des">自定义calss</span></h2>
+                        <div class="api-con clearfix">
+                            <p>
+                                类型：Bool，默认：true <br />
+                                如果不需要该功能，设置 false 即可:<br />
+                            </p>
+<pre>
+feiLayer.open({
+    skin:"layout-class",
+    content:"自定义风格Class！",
+    btn:["朕知道了"]
+});
+<a class="ui-btn" onclick="dom_skinFn()">试一下</a>
+</pre>
+                        </div>
+                    </div>
+                    
+                    <div class="list" in="link_btn">
+                        <h2 class="title">btn<span class="des">按钮</span></h2>
+                        <div class="api-con clearfix">
+                            <p>
+                                类型：Array，默认：["取消","确定"] <br />
+                                如果只需要1个自定义按钮，设置 ["确定"]即可:<br />
+                            </p>
+<pre>
+feiLayer.open({
+    content:"一个按钮！",
+    btn:["确定"],
+    yes:function(){
+        feiLayer.open({
+            type:2,
+            content:"yes 回调"
+        });
+    }
+});
+<a class="ui-btn" onclick="dom_btnFn()">试一下</a>
+</pre>
+                            <p>
+                                如果只需要2个按钮，设置 ["取消","确定"]即可:<br />
+                            </p>
+<pre>
+feiLayer.open({
+    content:"2个按钮！",
+    btn:["确定"],
+    yes:function(){
+        feiLayer.open({
+            type:2,
+            content:"yes 回调"
+        });
+    },
+    no:function(){
+        feiLayer.open({
+            type:2,
+            content:"no 回调"
+        });
+    }
+});
+<a class="ui-btn" onclick="dom_btnFn2()">试一下</a>
+</pre>
+                        </div>
+                    </div>
+                    
+                    <div class="list" in="link_time">
+                        <h2 class="title">time<span class="des">自动关闭的时间</span></h2>
+                        <div class="api-con clearfix">
+                            <p>
+                                类型：Number，默认：无 <br />
+                                如果需要该功能，设置 time 即可:<br />
+                            </p>
+<pre>
+feiLayer.open({
+    time:3000,
+    content:"3秒后自动关闭"
+});
+<a class="ui-btn" onclick="dom_timeFn()">试一下</a>
+</pre>
+                        </div>
+                    </div>
+                    
+                    <div class="list" in="link_success">
+                        <h2 class="title">success<span class="des">弹层成功后的回调</span></h2>
+                        <div class="api-con clearfix">
+                            <p>
+                                类型：Function，默认：无
+                            </p>
+<pre>
+feiLayer.open({
+    content:"success会执行吗？",
+    btn:["朕知道了"],
+    success:function(){
+        feiLayer.open({
+            type:2,
+            content:"弹窗成功 回调"
+        });
+    }
+});
+<a class="ui-btn" onclick="dom_successFn()">试一下</a>
+</pre>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="list" in="link_yes">
+                        <h2 class="title">yes<span class="des">确定的回调</span></h2>
+                        <div class="api-con clearfix">
+                            <p>
+                                类型：Function，默认：无
+                            </p>
+<pre>
+feiLayer.open({
+    content:"yes会执行吗？",
+    yes:function(){
+        feiLayer.open({
+            type:2,
+            content:"yes 回调"
+        });
+    }
+});
+<a class="ui-btn" onclick="dom_successFn()">试一下</a>
+</pre>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="list" in="link_no">
+                        <h2 class="title">no<span class="des">取消的回调</span></h2>
+                        <div class="api-con clearfix">
+                            <p>
+                                类型：Function，默认：无
+                            </p>
+<pre>
+feiLayer.open({
+    content:"no会执行吗？",
+    no:function(){
+        feiLayer.open({
+            type:2,
+            content:"yes 回调"
+        });
+    }
+});
+<a class="ui-btn" onclick="dom_noFn()">试一下</a>
+</pre>
+                        </div>
+                    </div>
+                    
+                    <div class="list" in="link_end">
+                        <h2 class="title">end<span class="des">关闭层后的回调</span></h2>
+                        <div class="api-con clearfix">
+                            <p>
+                                类型：Function，默认：无
+                            </p>
+<pre>
+feiLayer.open({
+    content:"end会执行吗？",
+    end:function(){
+        feiLayer.open({
+            type:2,
+            content:"end 回调"
+        });
+    }
+});
+<a class="ui-btn" onclick="dom_endFn()">试一下</a>
+</pre>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                </div>
+            </section>
+        </main>
+        <script>
+            
+        </script>
+    </body>
+</html>

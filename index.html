@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>feiLayer弹层组件移动版</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/dom.css?v=1" />
+        <link rel="stylesheet" type="text/css" href="js/feiLayer/default.css?v=1.0" />
+        <script src="js/feiLayer/feiLayer.min.js" type="text/javascript"></script>
+        
+        
+        <script src="js/jquery.js" type="text/javascript"></script>
+        <script src="js/dom.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div class="all-area">
+            <div class="site-name">feiLayer</div>
+            <nav class="nav">
+                <a href="https://github.com/haw86/feiLayer" target="_blank">下载</a>
+                <a href="api.html">文档</a>
+                <a href="index.html" class="current">首页</a>
+            </nav>
+            <div class="all-content">
+                <p>
+                    feiLayer mobile是为移动设备（手机、平板等webkit内核浏览器/webview）量身定做的弹层UI。重点是不支持IE之类的浏览器内核。另外，该组件采用原生JavaScript编写，无需依赖任何第三方库。
+                </p>
+
+                <h2>小试一把</h2>
+                <div class="op-box clearfix">
+                    <a class="ui-btn" onclick="test1()">Hello,春天小姐</a>
+                    <a class="ui-btn" onclick="test2()">询问对话框</a>
+                    <a class="ui-btn" onclick="test6()">询问对话框(无遮罩)</a>
+                    <a class="ui-btn" onclick="test4()">自动关闭的对话框</a>
+                    <a class="ui-btn" onclick="test3()">提示框</a>
+                    <a class="ui-btn" onclick="test5()">页面层</a>
+                </div>
+                
+                
+                <h2>询问对话框：</h2>
+                <div class="op-box clearfix">
+                    <pre>
+feiLayer.open({
+    content:"这是一个询问框",
+    yes:function(){
+        //确定
+        feiLayer.open({
+            btn:false,
+            type:2,
+            content:"春天小姐提醒：你点了确定"
+        });
+    },
+    no:function(){
+        //取消
+        feiLayer.open({
+            btn:false,
+            type:2,
+            content:"春天小姐提醒：你点了取消"
+        });
+
+    }
+});
+                        <a class="ui-btn" onclick="test2()">运行</a>
+                    </pre>
+                </div>
+                
+                <h2>设置3秒自动关闭：</h2>
+                <div class="op-box clearfix">
+                    <pre>
+feiLayer.open({
+    time:3000,
+    content:"3秒后自动关闭"
+});
+                        <a class="ui-btn" onclick="test4()">运行</a>
+                    </pre>
+                </div>
+                
+                <h2>提示框：</h2>
+                <div class="op-box clearfix">
+                    <pre>
+feiLayer.open({
+    btn:false,
+    type:2,
+    content:"来自“春天小姐”的第一个提示框"
+});
+                        <a class="ui-btn" onclick="test3()">运行</a>
+                    </pre>
+                </div>
+                
+                <h2>点击遮罩不允许关闭：</h2>
+                <div class="op-box clearfix">
+                    <pre>
+feiLayer.open({
+    title:"温馨提示",
+    shadeClose:false,
+    content:"点击遮罩不允许关闭",
+    btn:["我知道了"],
+});
+                        <a class="ui-btn" onclick="test7()">运行</a>
+                    </pre>
+                </div>
+                
+                <h2>页面层：</h2>
+                <div class="op-box clearfix">
+                    <pre>
+feiLayer.open({
+    type:3,
+    style:"height:500px;",
+    content:"这里是Html内容"
+});
+                        <a class="ui-btn" onclick="test5()">运行</a>
+                    </pre>
+                </div>
+                
+            </div>
+        </div>
+        <script>
+            
+        </script>
+    </body>
+</html>
