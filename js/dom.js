@@ -61,7 +61,7 @@ function test5(){
         type:3,
         style:"height:50%;max-width: 100%;",
         content:"这里是Html内容，别让“春天小姐”等太久！<br /><button class='ui-btn' onclick='feiLayer.closeAll()'>关闭弹窗</button>"
-    });
+    }); 
 }
 function test6(){
     feiLayer.open({
