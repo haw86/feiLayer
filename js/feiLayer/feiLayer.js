@@ -33,8 +33,8 @@
         //关闭
         close:function(e){
             var t = this;
-            
             var d = document.getElementById("feiui-Layer-"+e);
+            console.log(d);
             if(d&&d.parentNode){
                 var lc2 = d.getElementsByClassName("layer-center2");
                 var mask = d.getElementsByClassName("layer-mask");
@@ -226,7 +226,8 @@
             t.bindElem(t.index);
             t.index += 1;   //计数
             
-            t.config.success && t.config.success(t.index);
+            t.config.success && t.config.success(t.index-1);
+            return t.index-1;
         }
         
         

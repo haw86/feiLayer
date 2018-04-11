@@ -99,11 +99,14 @@ function test8(){
     });
 }
 function test9(){
-    feiLayer.open({
+    var loadings = feiLayer.open({
         content:"加载中...",
         shadeClose:false,
         type:4
-    });
+    });console.log(loadings);
+    setTimeout(function(){
+        feiLayer.close(loadings);
+    },2000);
 }
 function test10(){
     feiLayer.open({
