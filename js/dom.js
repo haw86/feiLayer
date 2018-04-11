@@ -103,7 +103,7 @@ function test9(){
         content:"加载中...",
         shadeClose:false,
         type:4
-    });console.log(loadings);
+    });
     setTimeout(function(){
         feiLayer.close(loadings);
     },2000);
