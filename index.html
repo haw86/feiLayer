@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
         <link rel="stylesheet" type="text/css" href="css/dom.css?v=1" />
         <link rel="stylesheet" type="text/css" href="js/feiLayer/default.css?v=1.0" />
-        <script src="js/feiLayer/feiLayer.js" type="text/javascript"></script>
+        <script src="js/feiLayer/feiLayer.min.js" type="text/javascript"></script>
         
         
         <script src="js/jquery.js" type="text/javascript"></script>
@@ -34,7 +34,7 @@
                     <a class="ui-btn" onclick="test3()">提示框</a>
                     <a class="ui-btn" onclick="test5()">页面层</a>
                     <a class="ui-btn" onclick="test8()">加载中（点遮罩关闭）</a>
-                    <a class="ui-btn" onclick="test9()">加载中(带提示，遮罩不关闭)</a>
+                    <a class="ui-btn" onclick="test9()">加载中(带提示，点遮罩不关闭)</a>
                     <a class="ui-btn" onclick="test10()">加载中(带提示，点遮罩关闭)</a>
                 </div>
                 
@@ -114,6 +114,17 @@ feiLayer.open({
                     </pre>
                 </div>
                 
+                
+                <h2>加载中：</h2>
+                <div class="op-box clearfix">
+                    <pre>
+feiLayer.open({
+    content:"加载中...",
+    type:4
+});
+                        <a class="ui-btn" onclick="test10()">运行</a>
+                    </pre>
+                </div>
             </div>
         </div>
         <script>
