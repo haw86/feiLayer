@@ -10,7 +10,7 @@
         //默认配置
         default:{
             title:false,
-            type:1, //1:信息框
+            type:1, //1:信息框  4:加载中
             content:"",
             shade:true,
             shadeClose:true,
@@ -44,7 +44,9 @@
                     lc2[0].setAttribute("class", "layer-center2 anim-fadeDownOut");
                     closeTime = 500;
                 }else{
-                    lc2[0].setAttribute("class", "layer-center2 anim-fadeUpOut");
+                    if(lc2&&lc2[0]){
+                        lc2[0].setAttribute("class", "layer-center2 anim-fadeUpOut");
+                    }
                 }
                 setTimeout(function(){
                     if(d.parentNode) d.parentNode.removeChild(d); 
@@ -115,6 +117,7 @@
             if(t.config.type==3){
                 var btn = "";
             }
+
             
             //动画
             var anim = "";
@@ -126,6 +129,12 @@
             }
             
             div.innerHTML = mask + "<div class='layer-main'><div class='layer-center'><div class='layer-center2 "+anim+"'>" + title + dom + btn + "</div></div></div>";
+
+            //加载中...
+            if(t.config.type==4){
+                div.innerHTML = mask + "<div class='layer-main'><div class='layer-center'><div class='Js-layer-center layer-loading-box'><div class='layer-loading'><div></div><div></div><div></div></div><div class='loading-tips'>"+t.config.content+"</div></div></div></div>";
+            }
+
             return div;
         },
         
@@ -161,13 +170,14 @@
                 b[0].onclick = function(event){
                     t.close(e);
                 };
-                b2[0].onclick = function(event){
-                    event.stopPropagation();
+                if(b2&&b2[0]){
+                    b2[0].onclick = function(event){
+                        event.stopPropagation();
+                    }
                 }
             }
             
             //如果设置了高度
-            
             if(t.config.height){
                 var con = d.getElementsByClassName("layer-content");
                 con[0].style.height = t.config.height;

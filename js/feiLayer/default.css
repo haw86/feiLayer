@@ -8,6 +8,63 @@
   width: 100%;
   z-index: 9999999;
 }
+@-webkit-keyframes ball-pulse-sync {
+  33% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+  66% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes ball-pulse-sync {
+  33% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+  66% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+.feiui-Layer .layer-loading {
+  text-align: center;
+}
+.feiui-Layer .layer-loading div {
+  background-color: #ffffff;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 3px;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  display: inline-block;
+}
+.feiui-Layer .layer-loading div:nth-child(0) {
+  -webkit-animation: ball-pulse-sync 0.6s 0s infinite ease-in-out;
+  animation: ball-pulse-sync 0.6s 0s infinite ease-in-out;
+}
+.feiui-Layer .layer-loading div:nth-child(1) {
+  -webkit-animation: ball-pulse-sync 0.6s 0.07s infinite ease-in-out;
+  animation: ball-pulse-sync 0.6s 0.07s infinite ease-in-out;
+}
+.feiui-Layer .layer-loading div:nth-child(2) {
+  -webkit-animation: ball-pulse-sync 0.6s 0.14s infinite ease-in-out;
+  animation: ball-pulse-sync 0.6s 0.14s infinite ease-in-out;
+}
+.feiui-Layer .layer-loading div:nth-child(3) {
+  -webkit-animation: ball-pulse-sync 0.6s 0.21s infinite ease-in-out;
+  animation: ball-pulse-sync 0.6s 0.21s infinite ease-in-out;
+}
 .feiui-Layer * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -61,6 +118,17 @@
   animation-fill-mode: both;
   -webkit-animation-duration: .3s;
   animation-duration: .3s;
+}
+.feiui-Layer .layer-loading-box {
+  border: 0px;
+  background: none!important;
+  -moz-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0) !important;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0) !important;
+}
+.feiui-Layer .layer-loading-box .loading-tips {
+  line-height: 400%;
+  color: #ffffff;
+  font-size: 16px;
 }
 .feiui-Layer .layer-content {
   text-align: left;

@@ -93,6 +93,25 @@ function test7(){
     });
 }
 
+function test8(){
+    feiLayer.open({
+        type:4
+    });
+}
+function test9(){
+    feiLayer.open({
+        content:"加载中...",
+        shadeClose:false,
+        type:4
+    });
+}
+function test10(){
+    feiLayer.open({
+        content:"加载中...",
+        type:4
+    });
+}
+
 
 //标题dom
 function dom_titleFn(){
