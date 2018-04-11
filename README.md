@@ -11,3 +11,6 @@ feiLayer mobile是为移动设备（手机、平板等webkit内核浏览器/webv
 
 ### 支持类型
 提供3中层类型，1（信息框）、2（提示框）、3（页面层）、4（加载中提示）
+
+### 官方Demo：
+[点击这里](http://ui.xfei.me/mobile/)
